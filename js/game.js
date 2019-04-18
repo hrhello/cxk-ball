@@ -290,8 +290,8 @@ class Game {
 	}
     window.addEventListener('keydown', function (event) {
       switch (event.keyCode) {
-        // 注册空格键发射事件
-        case 32 :
+        // 注册回车键发射事件
+        case 13 :
           if (g.state === g.state_GAMEOVER) { // 游戏结束时
             // 开始游戏
             g.state = g.state_START
