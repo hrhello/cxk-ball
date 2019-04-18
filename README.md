@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/4sJaCcI.png" align=right />
 
-## 蔡徐坤打篮球
+# 蔡徐坤打篮球
 
 本项目是蔡徐坤打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
 
