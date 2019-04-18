@@ -32,6 +32,6 @@ const allImg = {
   background: 'background.jpg',
   paddle: 'paddle.png',
   ball: 'ball.png',
-  block1: 'block001.png',
-  block2: 'block002.png',
+  block1: 'b1.png',
+  block2: 'b2.png',
 }
