@@ -4,7 +4,7 @@
 // 游戏主函数
 let _main = {
   LV: 1,                               // 初始关卡
-  MAXLV: 2,                            // 最终关卡
+  MAXLV: 3,                            // 最终关卡
   scene: null,                         // 场景对象
   blockList: null,                     // 所有砖块对象集合
   ball: null,                          // 小球对象
@@ -48,6 +48,6 @@ let _main = {
     self.game.init(self)
   }
 }
-setTimeout(function() {
-	_main.start()
-}, 1000);
+// setTimeout(function() {
+	// _main.start()
+// }, 1000);

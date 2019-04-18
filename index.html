@@ -31,10 +31,20 @@
 					<hr>
 					<center>
 						<p>
-							<div class="btn-group">
-								<button type="button" class="btn btn-danger" onclick="window.startGame()">开始游戏</button>
-								<button type="button" class="btn btn-warning" onclick="window.pauseGame()">暂停游戏</button>
-								<button type="button" class="btn btn-success" onclick="window.nextGame()">下个关卡</button>
+							<div class="input-group">
+								<span class="input-group-addon">难度</span>
+								<select class="form-control" id="ballspeedset">
+									<option value="2">简单难度（Speed 2）</option>
+									<option value="3" selected>普通难度（Speed 3）</option>
+									<option value="5">困难模式（Speed 3）</option>
+									<option value="7">极限模式（Speed 7）</option>
+									<option value="11">非人类（Speed 11）</option>
+								</select>
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-danger" onclick="window.startGame()">开始游戏</button>
+									<button type="button" class="btn btn-warning" onclick="window.pauseGame()">暂停游戏</button>
+									<button type="button" class="btn btn-success" onclick="window.nextGame()">下个关卡</button>
+								</div>
 							</div>
 						</p>
 					</center>
@@ -49,6 +59,7 @@
 					<p>如果出现显示不正常的情况请截图并通过 Issues 反馈。</p>
 					<hr>
 					<h3>更新记录</h3>
+					<p>1.4：增加难度设定功能</p>
 					<p>1.3：修复移动端操作问题</p>
 					<p>1.2：修复图片显示问题</p>
 					<p>1.1：将显示方式改为 background</p>
@@ -80,6 +91,11 @@
 			canvas.style
 		} else {
 			
+		}
+		window.startGame = function() {
+			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
+			$("#ballspeedset").attr("disabled", "disabled");
+			_main.start()
 		}
 	</script>
 </html>

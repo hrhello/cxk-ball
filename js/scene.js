@@ -55,7 +55,7 @@ class Ball {
       w: 32,                                // 图片宽度
       h: 32,                                // 图片高度
       speedX: 1,                            // x轴速度
-      speedY: 3,                            // y轴速度
+      speedY: window.cacheBallSpeed,        // y轴速度
       image: imageFromPath(allImg.ball),    // 图片对象
       fired: false,                         // 是否运动，默认静止不动
     }

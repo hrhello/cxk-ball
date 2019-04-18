@@ -36,6 +36,7 @@ class Game {
     g.drawBlocks(blockList)
     // 绘制分数
     g.drawText(score)
+	window.canvas_g = this
   }
   // 绘制图片
   drawImage (obj) {
@@ -73,6 +74,7 @@ class Game {
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
     this.context.fillText('蔡徐坤，你球掉了！', 404, 226)
+	$("#ballspeedset").removeAttr("disabled");
   }
   // 游戏晋级
   goodGame () {
@@ -99,6 +101,7 @@ class Game {
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
     this.context.fillText('你打球像蔡徐坤！', 308, 226)
+	$("#ballspeedset").removeAttr("disabled");
   }
   // 注册事件
   registerAction (key, callback) {
@@ -266,6 +269,7 @@ class Game {
       }
     })
 	window.startGame = function() {
+		window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 		if (g.state === g.state_GAMEOVER) { // 游戏结束时
             // 开始游戏
             g.state = g.state_START
@@ -292,17 +296,18 @@ class Game {
       switch (event.keyCode) {
         // 注册回车键发射事件
         case 13 :
-          if (g.state === g.state_GAMEOVER) { // 游戏结束时
-            // 开始游戏
-            g.state = g.state_START
-            // 初始化
-            g.main.start()
-          } else { 
-            // 开始游戏
-            ball.fired = true
-            g.state = g.state_RUNNING
-          }
-          break
+			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
+			if (g.state === g.state_GAMEOVER) { // 游戏结束时
+				// 开始游戏
+				g.state = g.state_START
+				// 初始化
+				g.main.start()
+			} else { 
+				// 开始游戏
+				ball.fired = true
+				g.state = g.state_RUNNING
+			}
+			break
         // N 键进入下一关卡
         case 78 :
           // 游戏状态为通关，且不为最终关卡时
