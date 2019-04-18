@@ -4,7 +4,7 @@
 
 本项目是蔡徐坤打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
 
-**demo**：[https://cxk.ssrr.one/](https://cxk.ssrr.one/)
+**Demo**：[https://cxk.ssrr.one/](https://cxk.ssrr.one/)
 
 > 本游戏有一定难度，请 ikun 们不要轻易尝试
 
@@ -12,7 +12,13 @@
 
 ## 游戏截图
 
-![](https://i.imgur.com/JreW6yU.png)
+![](https://i.imgur.com/T6upyHW.png)
+
+游戏有多种难度可选择（简单、普通、困难、极限以及非人类）
+
+非人类模式请勿轻易尝试，否则可能会疯掉
+
+祝您游戏愉快
 
 ## 玩耍方法
 
