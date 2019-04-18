@@ -12,7 +12,7 @@
 
 ## 游戏截图
 
-![](https://i.imgur.com/T6upyHW.png)
+![](https://i.imgur.com/gVfLn4a.png)
 
 游戏有多种难度可选择（简单、普通、困难、极限以及非人类）
 
