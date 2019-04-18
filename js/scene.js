@@ -64,13 +64,13 @@ class Ball {
   move (game) {
     if (this.fired) {
       // 碰撞边界检测
-      if (this.x < 0 || this.x > 1000 - this.w) {
+      if (this.x < 0 || this.x > canvas.clientWidth - this.w) {
         this.speedX *= -1
       }
       if (this.y < 0) {
         this.speedY *= -1
       }
-      if (this.y > 500 - this.h) {
+      if (this.y > canvas.clientHeight - this.h) {
         // 游戏结束
         game.state = game.state_GAMEOVER
         // game.isGameOver = true
@@ -187,8 +187,8 @@ class Scene {
   // 创建砖块坐标二维数组，并生成不同关卡
   creatBlockList () {
     let lv = this.lv,                         // 游戏难度级别
-        c_w = this.canvas.width,              // canvas宽度
-        c_h = this.canvas.height,             // canvas高度
+        c_w = this.canvas.clientWidth,              // canvas宽度
+        c_h = this.canvas.clientHeight,             // canvas高度
         xNum_max = c_w/50,                    // x轴砖块最大数量
         yNum_max = 12,                        // y轴砖块最大数量
         x_start = 0,                          // x轴起始坐标，根据砖块数量浮动

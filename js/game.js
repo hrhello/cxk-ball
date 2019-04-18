@@ -27,7 +27,7 @@ class Game {
     // 清除画布
     g.context.clearRect(0, 0, g.canvas.width, g.canvas.height)
     // 绘制背景图
-    g.drawBg()
+    // g.drawBg()
     // 绘制挡板
     g.drawImage(paddle)
     // 绘制小球
@@ -44,7 +44,7 @@ class Game {
   // 绘制背景图
   drawBg () {
     let bg = imageFromPath(allImg.background)
-    this.context.drawImage(bg, 0, 0)
+    this.context.drawImage(bg, 0, 0, cdiv.clientWidth, cdiv.clientHeight)
   }
   // 绘制所有砖块
   drawBlocks (list) {
@@ -68,7 +68,7 @@ class Game {
     // 清除画布
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
     // 绘制背景图
-    this.drawBg()
+    //this.drawBg()
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
@@ -81,7 +81,7 @@ class Game {
     // 清除画布
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
     // 绘制背景图
-    this.drawBg()
+    //this.drawBg()
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
@@ -94,7 +94,7 @@ class Game {
     // 清除画布
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
     // 绘制背景图
-    this.drawBg()
+    //this.drawBg()
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
@@ -148,7 +148,7 @@ class Game {
     } else {
       p.isLeftMove = true
     }
-    if (p.x >= 1000 - p.w) { // 到右边界时
+    if (p.x >= canvas.clientWidth - p.w) { // 到右边界时
       p.isRightMove = false
     } else {
       p.isRightMove = true
@@ -215,6 +215,39 @@ class Game {
     window.addEventListener('keyup', function (event) {
       g.keydowns[event.keyCode] = false
     })
+	// 设置鼠标点击
+    window.addEventListener('mousedown', function (event) {
+		var clientWidth = document.body.clientWidth;
+		if(event.clientX < clientWidth / 2) {
+			g.keydowns[37] = true;
+		} else {
+			g.keydowns[39] = true;
+		}
+    })
+    window.addEventListener('mouseup', function (event) {
+		var clientWidth = document.body.clientWidth;
+		if(event.clientX < clientWidth / 2) {
+			g.keydowns[37] = false;
+		} else {
+			g.keydowns[39] = false;
+		}
+    })
+	window.addEventListener('touchstart', function (event) {
+		var clientWidth = document.body.clientWidth;
+		if(event.touches[0].pageX < clientWidth / 2) {
+			g.keydowns[37] = true;
+		} else {
+			g.keydowns[39] = true;
+		}
+	})
+	window.addEventListener('touchend', function (event) {
+		var clientWidth = document.body.clientWidth;
+		if(event.changedTouches[0].pageX < clientWidth / 2) {
+			g.keydowns[37] = false;
+		} else {
+			g.keydowns[39] = false;
+		}
+	})
     g.registerAction = function (key, callback) {
       g.actions[key] = callback
     }
@@ -232,6 +265,29 @@ class Game {
         paddle.moveRight()
       }
     })
+	window.startGame = function() {
+		if (g.state === g.state_GAMEOVER) { // 游戏结束时
+            // 开始游戏
+            g.state = g.state_START
+            // 初始化
+            g.main.start()
+        } else { 
+            // 开始游戏
+            ball.fired = true
+            g.state = g.state_RUNNING
+        }
+	}
+	window.nextGame = function() {
+		if (g.state === g.state_UPDATE && g.main.LV !== g.main.MAXLV) { // 进入下一关
+            // 开始游戏
+            g.state = g.state_START
+            // 初始化下一关卡
+            g.main.start(++g.main.LV)
+        }
+	}
+	window.pauseGame = function() {
+		g.state = g.state_STOP
+	}
     window.addEventListener('keydown', function (event) {
       switch (event.keyCode) {
         // 注册空格键发射事件

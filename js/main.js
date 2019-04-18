@@ -48,4 +48,6 @@ let _main = {
     self.game.init(self)
   }
 }
-_main.start()
+setTimeout(function() {
+	_main.start()
+}, 1000);
