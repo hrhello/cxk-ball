@@ -11,7 +11,7 @@ let _main = {
   paddle: null,                        // 挡板对象
   score: null,                         // 计分板对象
   ball_x: 491,                         // 小球默认x轴坐标
-  ball_y: 432,                         // 小球默认y轴坐标
+  ball_y: 418,                         // 小球默认y轴坐标
   paddle_x: 449,                       // 挡板默认x轴坐标
   paddle_y: 450,                       // 挡板默认y轴坐标
   score_x: 10,                         // 计分板默认x轴坐标

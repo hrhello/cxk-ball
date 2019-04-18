@@ -7,8 +7,8 @@ class Paddle {
     let p = {
       x: _main.paddle_x,                                   // x轴坐标
       y: _main.paddle_y,                                   // y轴坐标
-      w: 102,                                              // 图片宽度
-      h: 22,                                               // 图片高度
+      w: 80,                                              // 图片宽度
+      h: 112,                                               // 图片高度
       speed: 10,                                           // x轴移动速度
       ballSpeedMax: 8,                                     // 小球反弹速度最大值
       image: imageFromPath(allImg.paddle),                 // 引入图片对象
@@ -52,8 +52,8 @@ class Ball {
     let b = {
       x: _main.ball_x,                      // x轴坐标
       y: _main.ball_y,                      // y轴坐标
-      w: 18,                                // 图片宽度
-      h: 18,                                // 图片高度
+      w: 32,                                // 图片宽度
+      h: 32,                                // 图片高度
       speedX: 1,                            // x轴速度
       speedY: 5,                            // y轴速度
       image: imageFromPath(allImg.ball),    // 图片对象

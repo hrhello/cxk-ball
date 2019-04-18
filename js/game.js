@@ -55,7 +55,7 @@ class Game {
   // 绘制计数板
   drawText (obj) {
     this.context.font = '24px Microsoft YaHei'
-    this.context.fillStyle = '#fff'
+    this.context.fillStyle = '#000'
     // 绘制分数
     this.context.fillText(obj.text + obj.allScore, obj.x, obj.y)
     // 绘制关卡
@@ -70,9 +70,9 @@ class Game {
     // 绘制背景图
     this.drawBg()
     // 绘制提示文字
-    this.context.font = '48px Microsoft YaHei'
-    this.context.fillStyle = '#fff'
-    this.context.fillText('游戏结束', 404, 226)
+    this.context.font = '32px Microsoft YaHei'
+    this.context.fillStyle = '#000'
+    this.context.fillText('蔡徐坤，你球掉了！', 404, 226)
   }
   // 游戏晋级
   goodGame () {
@@ -83,9 +83,9 @@ class Game {
     // 绘制背景图
     this.drawBg()
     // 绘制提示文字
-    this.context.font = '48px Microsoft YaHei'
-    this.context.fillStyle = '#fff'
-    this.context.fillText('恭喜晋级下一关卡', 308, 226)
+    this.context.font = '32px Microsoft YaHei'
+    this.context.fillStyle = '#000'
+    this.context.fillText('蔡徐坤，下一关！', 308, 226)
   }
   // 游戏通关
   finalGame () {
@@ -96,9 +96,9 @@ class Game {
     // 绘制背景图
     this.drawBg()
     // 绘制提示文字
-    this.context.font = '48px Microsoft YaHei'
-    this.context.fillStyle = '#fff'
-    this.context.fillText('恭喜通关全部关卡', 308, 226)
+    this.context.font = '32px Microsoft YaHei'
+    this.context.fillStyle = '#000'
+    this.context.fillText('你打球像蔡徐坤！', 308, 226)
   }
   // 注册事件
   registerAction (key, callback) {
