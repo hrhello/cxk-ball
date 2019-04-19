@@ -316,15 +316,17 @@ class Game {
         case 13 :
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 			audio.play();
-			if (g.state === g.state_GAMEOVER) { // 游戏结束时
-				// 开始游戏
-				g.state = g.state_START
-				// 初始化
-				g.main.start()
-			} else { 
-				// 开始游戏
-				ball.fired = true
-				g.state = g.state_RUNNING
+			if(g.state !== g.state_UPDATE) {
+				if (g.state === g.state_GAMEOVER) { // 游戏结束时
+					// 开始游戏
+					g.state = g.state_START
+					// 初始化
+					g.main.start()
+				} else { 
+					// 开始游戏
+					ball.fired = true
+					g.state = g.state_RUNNING
+				}
 			}
 			break
         // N 键进入下一关卡
