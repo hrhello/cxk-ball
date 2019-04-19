@@ -326,6 +326,15 @@ class Game {
             g.main.start(++g.main.LV)
           }
           break
+		case 77 :
+		  if($("#audio").attr("src") == "media/jntm.m4a") {
+			  audio.src = "about:blank";
+			  audio.pause();
+		  } else {
+			  audio.src = "media/jntm.m4a";
+			  audio.play();
+		  }
+		  break
         // P 键暂停游戏事件
         case 80 :
           g.state = g.state_STOP
