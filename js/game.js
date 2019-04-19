@@ -310,7 +310,7 @@ class Game {
 	}
 	window.pauseGame = function() {
 		audio.pause();
-		if(g.state !== g.state_UPDATE) {
+		if(g.state !== g.state_UPDATE && g.state !== g.state_GAMEOVER) {
 			g.state = g.state_STOP
 		}
 	}
@@ -355,7 +355,7 @@ class Game {
 		  break
         // P 键暂停游戏事件
         case 80 :
-		  if(g.state !== g.state_UPDATE) {
+		  if(g.state !== g.state_UPDATE && g.state !== g.state_GAMEOVER) {
 			g.state = g.state_STOP
 		  }
           break
