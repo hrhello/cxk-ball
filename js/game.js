@@ -22,7 +22,7 @@ class Game {
     Object.assign(this, g)
   }
   // 绘制页面所有素材
-  draw (paddle, ball, blockList, score) {
+  draw (paddle, ball, ballshadow, blockList, score) {
     let g = this
     // 清除画布
     g.context.clearRect(0, 0, g.canvas.width, g.canvas.height)
@@ -32,6 +32,8 @@ class Game {
     g.drawImage(paddle)
     // 绘制小球
     g.drawImage(ball)
+	// 绘制小球阴影
+    g.drawImage(ballshadow)
     // 绘制砖块
     g.drawBlocks(blockList)
     // 绘制分数
@@ -163,7 +165,7 @@ class Game {
     b.move(g)
   }
   // 设置逐帧动画
-  setTimer (paddle, ball, blockList, score) {
+  setTimer (paddle, ball, ballshadow, blockList, score) {
     let g = this
     let main = g.main
     g.timer = setInterval(function () {
@@ -198,10 +200,10 @@ class Game {
       if (g.state === g.state_RUNNING) {
         g.checkBallBlock(g, paddle, ball, blockList, score)
         // 绘制游戏所有素材
-        g.draw(paddle, ball, blockList, score)
+        g.draw(paddle, ball, ballshadow, blockList, score)
       } else if (g.state === g.state_START){
         // 绘制游戏所有素材
-        g.draw(paddle, ball, blockList, score)
+        g.draw(paddle, ball, ballshadow, blockList, score)
       }
     }, 1000/g.fps)
   }
@@ -212,6 +214,7 @@ class Game {
     let g = this,
         paddle = g.main.paddle,
         ball = g.main.ball,
+        ballshadow = g.main.ballshadow,
         blockList = g.main.blockList,
         score = g.main.score
     // 设置键盘按下及松开相关注册函数
@@ -273,6 +276,7 @@ class Game {
     g.registerAction('37', function(){
       // 判断游戏是否处于运行阶段
       if (g.state === g.state_RUNNING && paddle.isLeftMove) {
+		  move_way = 2;
         paddle.moveLeft()
       }
     })
@@ -280,6 +284,7 @@ class Game {
     g.registerAction('39', function(){
       // 判断游戏是否处于运行阶段
       if (g.state === g.state_RUNNING && paddle.isRightMove) {
+		  move_way = 1;
         paddle.moveRight()
       }
     })
@@ -362,6 +367,6 @@ class Game {
       }
     })
     // 设置轮询定时器
-    g.setTimer(paddle, ball, blockList, score)
+    g.setTimer(paddle, ball, ballshadow, blockList, score)
   }
 }

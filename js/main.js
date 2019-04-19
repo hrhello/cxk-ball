@@ -8,6 +8,7 @@ let _main = {
   scene: null,                         // 场景对象
   blockList: null,                     // 所有砖块对象集合
   ball: null,                          // 小球对象
+  ballshadow: null,                          // 小球阴影对象
   paddle: null,                        // 挡板对象
   score: null,                         // 计分板对象
   ball_x: 491,                         // 小球默认x轴坐标
@@ -30,6 +31,10 @@ let _main = {
      * 小球
      */
     self.ball = new Ball(self)
+	/**
+     * 小球阴影
+     */
+    self.ballshadow = new BallShadow(self)
     /**
      * 挡板
      */

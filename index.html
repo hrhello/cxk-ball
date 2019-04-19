@@ -86,6 +86,7 @@
 	<script>
 		var clientWidth = document.body.clientWidth;
 		var cxk_body = 1;
+		var move_way = 1;
 		canvas.width = canvas.clientWidth;
 		canvas.style.width = canvas.clientWidth + "px";
 		cdiv.style.width = cdiv.clientWidth + "px";
@@ -109,16 +110,26 @@
 			_main.start();
 			setInterval(function() {
 				if(cxk_body == 1) {
-					_main.paddle.image.src = "images/paddle2.png";
+					_main.paddle.image.src = "images/paddle2_" + move_way + ".png";
 					cxk_body = 2;
 				} else if(cxk_body == 2) {
-					_main.paddle.image.src = "images/paddle3.png";
+					_main.paddle.image.src = "images/paddle3_" + move_way + ".png";
 					cxk_body = 3;
 				} else {
-					_main.paddle.image.src = "images/paddle.png";
+					_main.paddle.image.src = "images/paddle_" + move_way + ".png";
 					cxk_body = 1;
 				}
 			}, 200);
+			_main.ballshadow.y = 545;
+			setInterval(function() {
+				if(_main.ball.y < 530) {
+					_main.ballshadow.x = _main.ball.x;
+					_main.ballshadow.y = 545;
+				} else {
+					_main.ballshadow.x = _main.ball.x;
+					_main.ballshadow.y = _main.ball.y + 20;
+				}
+			}, 10);
 		}
 	</script>
 </html>

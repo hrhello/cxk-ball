@@ -81,6 +81,25 @@ class Ball {
     }
   }
 }
+// 小球阴影对象
+class BallShadow {
+  constructor (_main) {
+    let b = {
+      x: _main.ball_x,                      // x轴坐标
+      y: _main.paddle_y,                    // y轴坐标
+      w: 32,                                // 图片宽度
+      h: 32,                                // 图片高度
+      speedX: 1,                            // x轴速度
+      speedY: window.cacheBallSpeed,        // y轴速度
+      image: imageFromPath(allImg.ballshadow),    // 图片对象
+      fired: false,                         // 是否运动，默认静止不动
+    }
+    Object.assign(this, b)
+  }
+  move (game) {
+	  this.x = _main.ball.x
+  }
+}
 // 砖块
 class Block {
   constructor (x, y, life = 1) {
