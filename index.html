@@ -72,6 +72,7 @@
 			</div>
 		</div>
 	</body>
+	<audio src="" style="width: 0px;height: 0px;border: 0px;" id="audio"></audio>
 	<script src="js/common.js?s=3"></script>
 	<script src="js/scene.js?s=3"></script>
 	<script src="js/game.js?s=3"></script>
@@ -95,6 +96,8 @@
 			
 		}
 		window.startGame = function() {
+			$("#audio").attr("src", "media/jntm.m4a");
+			audio.play();
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 			$("#ballspeedset").attr("disabled", "disabled");
 			_main.start();
