@@ -286,16 +286,18 @@ class Game {
 	window.startGame = function() {
 		window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 		audio.play();
-		if (g.state === g.state_GAMEOVER) { // 游戏结束时
-            // 开始游戏
-            g.state = g.state_START
-            // 初始化
-            g.main.start()
-        } else { 
-            // 开始游戏
-            ball.fired = true
-            g.state = g.state_RUNNING
-        }
+		if(g.state !== g.state_UPDATE) {
+			if (g.state === g.state_GAMEOVER) { // 游戏结束时
+				// 开始游戏
+				g.state = g.state_START
+				// 初始化
+				g.main.start()
+			} else { 
+				// 开始游戏
+				ball.fired = true
+				g.state = g.state_RUNNING
+			}
+		}
 	}
 	window.nextGame = function() {
 		audio.play();
@@ -308,7 +310,9 @@ class Game {
 	}
 	window.pauseGame = function() {
 		audio.pause();
-		g.state = g.state_STOP
+		if(g.state !== g.state_UPDATE) {
+			g.state = g.state_STOP
+		}
 	}
     window.addEventListener('keydown', function (event) {
       switch (event.keyCode) {
@@ -351,7 +355,9 @@ class Game {
 		  break
         // P 键暂停游戏事件
         case 80 :
-          g.state = g.state_STOP
+		  if(g.state !== g.state_UPDATE) {
+			g.state = g.state_STOP
+		  }
           break
       }
     })
