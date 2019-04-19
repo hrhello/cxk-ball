@@ -216,10 +216,22 @@ class Game {
         score = g.main.score
     // 设置键盘按下及松开相关注册函数
     window.addEventListener('keydown', function (event) {
-     g.keydowns[event.keyCode] = true
+		if(event.keyCode == 65) {
+			g.keydowns[37] = true;
+		} else if(event.keyCode == 68) {
+			g.keydowns[39] = true;
+		} else {
+			g.keydowns[event.keyCode] = true
+		}
     })
     window.addEventListener('keyup', function (event) {
-      g.keydowns[event.keyCode] = false
+		if(event.keyCode == 65) {
+			g.keydowns[37] = false;
+		} else if(event.keyCode == 68) {
+			g.keydowns[39] = false;
+		} else {
+			g.keydowns[event.keyCode] = false
+		}
     })
 	// 设置鼠标点击
     window.addEventListener('mousedown', function (event) {
