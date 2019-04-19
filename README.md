@@ -20,6 +20,16 @@
 
 祝您游戏愉快
 
+## 问题排除
+
+如果出现人物闪烁或者看不到的情况，请手动访问下面这三个文件让浏览器缓存贴图
+
+- [/images/paddle.png](https://cxk.ssrr.one/images/paddle.png)
+- [/images/paddle2.png](https://cxk.ssrr.one/images/paddle2.png)
+- [/images/paddle3.png](https://cxk.ssrr.one/images/paddle3.png)
+
+如果玩到一半出现球卡住不动的情况，请尝试刷新重新开始
+
 ## 玩耍方法
 
 直接玩 demo 或者 clone 到本地
