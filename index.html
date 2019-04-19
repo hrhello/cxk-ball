@@ -78,6 +78,7 @@
 	<script src="js/main.js?s=3"></script>
 	<script>
 		var clientWidth = document.body.clientWidth;
+		var cxk_body = 1;
 		canvas.width = canvas.clientWidth;
 		canvas.style.width = canvas.clientWidth + "px";
 		cdiv.style.width = cdiv.clientWidth + "px";
@@ -96,7 +97,19 @@
 		window.startGame = function() {
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 			$("#ballspeedset").attr("disabled", "disabled");
-			_main.start()
+			_main.start();
+			setInterval(function() {
+				if(cxk_body == 1) {
+					_main.paddle.image.src = "images/paddle2.png";
+					cxk_body = 2;
+				} else if(cxk_body == 2) {
+					_main.paddle.image.src = "images/paddle3.png";
+					cxk_body = 3;
+				} else {
+					_main.paddle.image.src = "images/paddle.png";
+					cxk_body = 1;
+				}
+			}, 200);
 		}
 	</script>
 </html>
