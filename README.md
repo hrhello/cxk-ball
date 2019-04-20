@@ -1,8 +1,8 @@
-<img src="https://i.imgur.com/4sJaCcI.png" align=right />
+<img src="https://i.imgur.com/aoB8Er1.png" align=right />
 
-# 蔡徐坤打篮球
+# CXK 打篮球
 
-本项目是蔡徐坤打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
+本项目是 CXK 打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
 
 **Demo**：[https://cxk.ssrr.one/](https://cxk.ssrr.one/)
 
