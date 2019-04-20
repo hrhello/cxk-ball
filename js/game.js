@@ -260,6 +260,7 @@ class Game {
 		} else {
 			g.keydowns[39] = true;
 		}
+		event.preventDefault();
 	})
 	window.addEventListener('touchend', function (event) {
 		var clientWidth = document.body.clientWidth;
