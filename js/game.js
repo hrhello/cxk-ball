@@ -292,6 +292,7 @@ class Game {
 		window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 		audio.play();
 		if(g.state !== g.state_UPDATE) {
+			$("#ballspeedset").attr("disabled", "disabled");
 			if (g.state === g.state_GAMEOVER) { // 游戏结束时
 				// 开始游戏
 				g.state = g.state_START
@@ -311,6 +312,7 @@ class Game {
             g.state = g.state_START
             // 初始化下一关卡
             g.main.start(++g.main.LV)
+			$("#ballspeedset").attr("disabled", "disabled");
         }
 	}
 	window.pauseGame = function() {
@@ -326,6 +328,7 @@ class Game {
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 			audio.play();
 			if(g.state !== g.state_UPDATE) {
+				$("#ballspeedset").attr("disabled", "disabled");
 				if (g.state === g.state_GAMEOVER) { // 游戏结束时
 					// 开始游戏
 					g.state = g.state_START
@@ -347,6 +350,7 @@ class Game {
             g.state = g.state_START
             // 初始化下一关卡
             g.main.start(++g.main.LV)
+			$("#ballspeedset").attr("disabled", "disabled");
           }
           break
 		case 77 :
