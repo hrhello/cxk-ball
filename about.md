@@ -15,3 +15,5 @@
 https://www.douban.com/group/topic/138833564
 
 以上内容欢迎大家补充，Issues 或者 Pull request 均可。
+
+最后，这个游戏也只是想让大家笑一笑，玩的开心就好，玩笑可以开，但是不要侮辱。
