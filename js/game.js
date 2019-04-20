@@ -75,7 +75,7 @@ class Game {
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
-    this.context.fillText('蔡徐坤，你球掉了！', 404, 226)
+    this.context.fillText('CXK，你球掉了！', 404, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	audio.pause();
   }
@@ -90,7 +90,7 @@ class Game {
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
-    this.context.fillText('蔡徐坤，下一关！', 308, 226)
+    this.context.fillText('CXK，下一关！', 308, 226)
 	audio.pause();
   }
   // 游戏通关
@@ -104,7 +104,7 @@ class Game {
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
-    this.context.fillText('你打球像蔡徐坤！', 308, 226)
+    this.context.fillText('你打球像CXK！', 308, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	audio.pause();
   }
