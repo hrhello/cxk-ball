@@ -4,7 +4,7 @@
 
 本项目是 CXK 打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
 
-**ReadMe:** [English Version](README_EN.md) | **Demo**：[https://cxk.ssrr.one/](https://cxk.ssrr.one/)
+**ReadMe:** [English Version](README_EN.md) | **Demo**：[cxk.ssrr.one](https://cxk.ssrr.one/)
 
 > 本游戏有一定难度，请 ikun 们不要轻易尝试
 
