@@ -55,7 +55,7 @@
 					</center>
 					<hr>
 					<h3>游戏说明</h3>
-					<p>使用方向键控制 CXK 左右移动，使用回车让 CXK 发球，按 P 暂停游戏，通关后按 N 进入下一关，按 M 可以暂停音乐</p>
+					<p>使用方向键控制 CXK 左右移动，使用回车让 CXK 发球，按 P 暂停游戏，通关后按 N 进入下一关</p>
 					<p>移动端可以点击屏幕左右控制 CXK 移动。</p>
 					<p>如果出现显示不正常的情况请截图并通过 Issues 反馈。</p>
 					<hr>
@@ -82,8 +82,8 @@
 	<img src="images/paddle2_2.png" style="width: 0px;height: 0px;" />
 	<img src="images/paddle3_1.png" style="width: 0px;height: 0px;" />
 	<img src="images/paddle3_2.png" style="width: 0px;height: 0px;" />
-	<!-- 背景音乐 -->
-	<audio src="" style="width: 0px;height: 0px;border: 0px;" id="audio" loop="-1"></audio>
+	<!-- 背景音乐（已删除） -->
+	<!-- <audio src="" style="width: 0px;height: 0px;border: 0px;" id="audio" loop="-1"></audio> -->
 	<script src="js/common.js?s=4"></script>
 	<script src="js/scene.js?s=4"></script>
 	<script src="js/game.js?s=4"></script>
@@ -103,13 +103,12 @@
 			canvas.height = 936 / 1000 * 563;
 			canvas.setAttribute("style", "");
 			canvas.style.zoom = (cdiv.clientWidth / 936);
-			canvas.style
 		} else {
 			
 		}
 		window.startGame = function() {
-			$("#audio").attr("src", "media/jntm.m4a");
-			audio.play();
+			// $("#audio").attr("src", "media/jntm.m4a");
+			// audio.play();
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 			$("#ballspeedset").attr("disabled", "disabled");
 			_main.start();

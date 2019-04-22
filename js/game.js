@@ -291,7 +291,7 @@ class Game {
     })
 	window.startGame = function() {
 		window.cacheBallSpeed = parseInt($("#ballspeedset").val());
-		audio.play();
+		// audio.play();
 		if(g.state !== g.state_UPDATE) {
 			$("#ballspeedset").attr("disabled", "disabled");
 			if (g.state === g.state_GAMEOVER) { // 游戏结束时
@@ -307,7 +307,7 @@ class Game {
 		}
 	}
 	window.nextGame = function() {
-		audio.play();
+		// audio.play();
 		if (g.state === g.state_UPDATE && g.main.LV !== g.main.MAXLV) { // 进入下一关
             // 开始游戏
             g.state = g.state_START
@@ -317,7 +317,7 @@ class Game {
         }
 	}
 	window.pauseGame = function() {
-		audio.pause();
+		// audio.pause();
 		if(g.state !== g.state_UPDATE && g.state !== g.state_GAMEOVER) {
 			g.state = g.state_STOP
 		}
@@ -327,7 +327,7 @@ class Game {
         // 注册回车键发射事件
         case 13 :
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
-			audio.play();
+			// audio.play();
 			if(g.state !== g.state_UPDATE) {
 				$("#ballspeedset").attr("disabled", "disabled");
 				if (g.state === g.state_GAMEOVER) { // 游戏结束时
@@ -345,7 +345,7 @@ class Game {
         // N 键进入下一关卡
         case 78 :
           // 游戏状态为通关，且不为最终关卡时
-		  audio.play();
+		  // audio.play();
           if (g.state === g.state_UPDATE && g.main.LV !== g.main.MAXLV) { // 进入下一关
             // 开始游戏
             g.state = g.state_START
@@ -354,7 +354,7 @@ class Game {
 			$("#ballspeedset").attr("disabled", "disabled");
           }
           break
-		case 77 :
+		/* case 77 :
 		  if($("#audio").attr("src") == "media/jntm.m4a") {
 			  audio.src = "about:blank";
 			  audio.pause();
@@ -362,7 +362,7 @@ class Game {
 			  audio.src = "media/jntm.m4a";
 			  audio.play();
 		  }
-		  break
+		  break */
         // P 键暂停游戏事件
         case 80 :
 		  if(g.state !== g.state_UPDATE && g.state !== g.state_GAMEOVER) {
