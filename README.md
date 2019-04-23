@@ -18,6 +18,8 @@
 
 非人类模式请勿轻易尝试，否则可能会疯掉（雾
 
+![](https://upload-images.jianshu.io/upload_images/3203841-f8468944b6321119.gif?imageMogr2/auto-orient/strip)
+
 祝您游戏愉快
 
 ## 如何体验
