@@ -1,6 +1,10 @@
 /* by：弦云孤赫——David Yang
 ** github - https://github.com/yangyunhe369
 */
+// 创建储存积分的变量
+var storageScore = 0;
+// 创建储存总分的变量
+var globalScore = 0;
 // 游戏主要运行逻辑
 class Game {
   constructor (main) {
@@ -63,9 +67,11 @@ class Game {
     this.context.fillText(obj.text + obj.allScore, obj.x, obj.y)
     // 绘制关卡
     this.context.fillText(obj.textLv + obj.lv, this.canvas.width - 100, obj.y)
+	storageScore = obj.allScore;
   }
   // 游戏结束
   gameOver () {
+	globalScore = globalScore + storageScore;
     // 清除定时器
     clearInterval(this.timer)
     // 清除画布
@@ -75,12 +81,13 @@ class Game {
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
-    this.context.fillText('CXK，你球掉了！', 404, 226)
+    this.context.fillText('CXK，你球掉了！得分：' + globalScore, 404, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	// audio.pause();
   }
   // 游戏晋级
   goodGame () {
+	globalScore = globalScore + storageScore;
     // 清除定时器
     clearInterval(this.timer)
     // 清除画布
@@ -95,6 +102,7 @@ class Game {
   }
   // 游戏通关
   finalGame () {
+	globalScore = globalScore + storageScore;
     // 清除定时器
     clearInterval(this.timer)
     // 清除画布
@@ -104,7 +112,7 @@ class Game {
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
-    this.context.fillText('你打球像CXK！', 308, 226)
+    this.context.fillText('CXK，通关！总分：' + globalScore, 308, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	// audio.pause();
   }
