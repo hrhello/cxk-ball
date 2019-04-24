@@ -232,6 +232,10 @@ class Game {
 			g.keydowns[37] = true;
 		} else if(event.keyCode == 68) {
 			g.keydowns[39] = true;
+		} else if(event.keyCode == 88) {
+			g.keydowns[37] = true;
+		} else if(event.keyCode == 67) {
+			g.keydowns[39] = true;
 		} else {
 			g.keydowns[event.keyCode] = true
 		}
@@ -240,6 +244,10 @@ class Game {
 		if(event.keyCode == 65) {
 			g.keydowns[37] = false;
 		} else if(event.keyCode == 68) {
+			g.keydowns[39] = false;
+		} else if(event.keyCode == 88) {
+			g.keydowns[37] = false;
+		} else if(event.keyCode == 67) {
 			g.keydowns[39] = false;
 		} else {
 			g.keydowns[event.keyCode] = false
@@ -335,6 +343,23 @@ class Game {
       switch (event.keyCode) {
         // 注册回车键发射事件
         case 13 :
+			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
+			// audio.play();
+			if(g.state !== g.state_UPDATE) {
+				$("#ballspeedset").attr("disabled", "disabled");
+				if (g.state === g.state_GAMEOVER) { // 游戏结束时
+					// 开始游戏
+					g.state = g.state_START
+					// 初始化
+					g.main.start()
+				} else {
+					// 开始游戏
+					ball.fired = true
+					g.state = g.state_RUNNING
+				}
+			}
+			break
+		case 75 :
 			window.cacheBallSpeed = parseInt($("#ballspeedset").val());
 			// audio.play();
 			if(g.state !== g.state_UPDATE) {
