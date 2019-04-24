@@ -71,6 +71,7 @@ class Game {
   }
   // 游戏结束
   gameOver () {
+	globalScore = globalScore + storageScore;
     // 清除定时器
     clearInterval(this.timer)
     // 清除画布
@@ -80,7 +81,7 @@ class Game {
     // 绘制提示文字
     this.context.font = '32px Microsoft YaHei'
     this.context.fillStyle = '#000'
-    this.context.fillText('CXK，你球掉了！', 404, 226)
+    this.context.fillText('CXK，你球掉了！得分：' + globalScore, 404, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	// audio.pause();
   }
