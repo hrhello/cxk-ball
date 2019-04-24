@@ -118,6 +118,7 @@ class Game {
     // 小球碰撞挡板检测
     if (p.collide(b)) {
       // 当小球运动方向趋向挡板中心时，Y轴速度取反，反之则不变
+      cxk_body = 4;
       if (Math.abs(b.y + b.h/2 - p.y + p.h/2) > Math.abs(b.y + b.h/2 + b.speedY - p.y + p.h/2)) {
         b.speedY *= -1
       } else {
@@ -299,7 +300,7 @@ class Game {
 				g.state = g.state_START
 				// 初始化
 				g.main.start()
-			} else { 
+			} else {
 				// 开始游戏
 				ball.fired = true
 				g.state = g.state_RUNNING
@@ -335,7 +336,7 @@ class Game {
 					g.state = g.state_START
 					// 初始化
 					g.main.start()
-				} else { 
+				} else {
 					// 开始游戏
 					ball.fired = true
 					g.state = g.state_RUNNING

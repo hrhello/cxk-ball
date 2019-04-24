@@ -70,7 +70,7 @@ class Ball {
       if (this.y < 0) {
         this.speedY *= -1
       }
-      if (this.y > canvas.clientHeight - this.h) {
+      if (this.y > _main.ballshadow.y - (this.h - 16)) {
         // 游戏结束
         game.state = game.state_GAMEOVER
         // game.isGameOver = true
