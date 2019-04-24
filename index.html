@@ -19,7 +19,7 @@
 			(function() {
 			  var hm = document.createElement("script");
 			  hm.src = "https://hm.baidu.com/hm.js?5adedb455da362ba577abe2fd8e1095d";
-			  var s = document.getElementsByTagName("script")[0]; 
+			  var s = document.getElementsByTagName("script")[0];
 			  s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
@@ -104,7 +104,7 @@
 			canvas.setAttribute("style", "");
 			canvas.style.zoom = (cdiv.clientWidth / 936);
 		} else {
-			
+
 		}
 		window.startGame = function() {
 			// $("#audio").attr("src", "media/jntm.m4a");
@@ -119,20 +119,18 @@
 				} else if(cxk_body == 2) {
 					_main.paddle.image.src = "images/paddle3_" + move_way + ".png";
 					cxk_body = 3;
+				}else if(cxk_body == 4){
+					_main.paddle.image.src = "images/paddle4_" + move_way + ".png";
+					cxk_body = 3;
 				} else {
 					_main.paddle.image.src = "images/paddle_" + move_way + ".png";
 					cxk_body = 1;
 				}
 			}, 200);
-			_main.ballshadow.y = 545;
+
 			setInterval(function() {
-				if(_main.ball.y < 530) {
-					_main.ballshadow.x = _main.ball.x;
-					_main.ballshadow.y = 545;
-				} else {
-					_main.ballshadow.x = _main.ball.x;
-					_main.ballshadow.y = _main.ball.y + 20;
-				}
+				_main.ballshadow.y = 545;
+				_main.ballshadow.x = _main.ball.x;
 			}, 10);
 		}
 	</script>
