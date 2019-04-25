@@ -19,6 +19,9 @@ let _main = {
   score_y: 30,                         // 计分板默认y轴坐标
   fps: 60,                             // 游戏运行帧数
   game: null,                          // 游戏主要逻辑对象
+
+  skillq: null,                        // q技能
+
   start: function () {                 // 游戏启动函数
     let self = this
     /**
@@ -47,6 +50,9 @@ let _main = {
      * 游戏主要逻辑
      */
     self.game = new Game(self)
+
+    self.skillq = new SkillQ(self);
+    
     /**
      * 游戏初始化
      */
