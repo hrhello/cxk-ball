@@ -84,6 +84,7 @@ class Game {
     this.context.fillText('CXK，你球掉了！得分：' + globalScore, 404, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	// audio.pause();
+	globalScore = 0;
   }
   // 游戏晋级
   goodGame () {
@@ -115,6 +116,7 @@ class Game {
     this.context.fillText('CXK，通关！总分：' + globalScore, 308, 226)
 	$("#ballspeedset").removeAttr("disabled");
 	// audio.pause();
+	globalScore = 0;
   }
   // 注册事件
   registerAction (key, callback) {
