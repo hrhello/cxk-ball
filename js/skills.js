@@ -21,7 +21,7 @@ class Skill {
     } else if(typeof keyCode === 'string' && keyCode.length === 1) {
       this.keyCode = keyCode.toUpperCase().charCodeAt(0);
     } else {
-      throw new Error(`技能${name}无法绑定按键${keyCode}`);
+      throw new Error(`技能${name}无法绑定按键${keyCode}`);
     }
     this.lastCastTime = 0; // Date.now();
 
@@ -123,7 +123,7 @@ class SkillW extends Skill {
     const {paddle, ball} = this.main;
     this.casting = setInterval(() => {
       paddle.x = ball.x - paddle.w / 2;
-    }, 50);
+    }, 10);
     setTimeout(() => {
       clearInterval(this.casting);
     }, this.duration * 1000);
