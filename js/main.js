@@ -21,6 +21,7 @@ let _main = {
   game: null,                          // 游戏主要逻辑对象
 
   skillq: null,                        // q技能
+  skillw: null,                        // w技能
 
   start: function () {                 // 游戏启动函数
     let self = this
@@ -52,6 +53,7 @@ let _main = {
     self.game = new Game(self)
 
     self.skillq = new SkillQ(self);
+    self.skillw = new SkillW(self);
     
     /**
      * 游戏初始化
