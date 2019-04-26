@@ -2,12 +2,12 @@ class Skill {
   /**
    * 
    * @param {*} main 
-   * @param {*} name 技能名称
+   * @param {string} name 技能名称
    * @param {*} icon 技能图标
-   * @param {*} desc 技能描述
-   * @param {*} cd 技能冷却时间，单位秒
-   * @param {*} cost 技能消耗
-   * @param {*} keyCode 按键
+   * @param {string} desc 技能描述
+   * @param {number} cd 技能冷却时间，单位秒
+   * @param {number} cost 技能消耗
+   * @param {number|string} keyCode 按键
    */
   constructor(main, name, icon, desc, cd, cost, keyCode) {
     this.main = main;
@@ -16,7 +16,13 @@ class Skill {
     this.desc = desc;
     this.cd = cd;
     this.cost = cost;
-    this.keyCode = keyCode;
+    if(typeof keyCode === 'number') {
+      this.keyCode = keyCode;
+    } else if(typeof keyCode === 'string' && keyCode.length === 1) {
+      this.keyCode = keyCode.toUpperCase().charCodeAt(0);
+    } else {
+      throw new Error(`技能${name}无法绑定按键${keyCode}`);
+    }
     this.lastCastTime = 0; // Date.now();
 
     this.bindKey();
@@ -64,7 +70,7 @@ class SkillQ extends Skill {
       'cxk使用意念控制球转向一次，直接命中最近的一个砖块',
       10,
       1000,
-      81);
+      'Q');
   }
 
   /**
@@ -97,5 +103,29 @@ class SkillQ extends Skill {
     const expectTime = Math.sqrt(targetDistance / speed);
     ball.speedX = (ball.x - targetBlock.x) / expectTime;
     ball.speedY = (ball.y - targetBlock.y) / expectTime;
+  }
+}
+
+class SkillW extends Skill {
+  constructor(main) {
+    super(main,
+      '虚鲲鬼步',
+      '',
+      'cxk发动在美国校队时领悟的绝技，5秒内可以100%接住篮球',
+      10,
+      1000,
+      'W');
+    this.duration = 5;  // 持续5秒
+  }
+
+  cast() {
+    super.cast();
+    const {paddle, ball} = this.main;
+    this.casting = setInterval(() => {
+      paddle.x = ball.x - paddle.w / 2;
+    }, 50);
+    setTimeout(() => {
+      clearInterval(this.casting);
+    }, this.duration * 1000);
   }
 }
