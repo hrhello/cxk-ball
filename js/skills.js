@@ -112,8 +112,8 @@ class SkillW extends Skill {
       '虚鲲鬼步',
       '',
       'cxk发动在美国校队时领悟的绝技，5秒内可以100%接住篮球',
-      0,
-      0,
+      10,
+      1000,
       'W');
     this.duration = 5;  // 持续5秒
   }
