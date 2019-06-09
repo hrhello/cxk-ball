@@ -62,6 +62,8 @@ git clone https://github.com/kasuganosoras/cxk-ball
 
 以下功能我会试着（但不一定会）去实现
 
+> 因为懒，而且比较忙，本项目无限期停止更新，有兴趣的可以自己 Fork 然后修改
+
 - [ ] 增加存档功能
 - [ ] 增加更多关卡
 - [ ] 增加多人联机功能
